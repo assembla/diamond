@@ -31,13 +31,15 @@ action :config do
                 :prefix => new_resource.prefix
               })
   end
-  service "diamond" do
-    provider Chef::Provider::Service::Upstart
-    action [:stop,:disable]
-  end
-  file "/etc/init/diamond.conf" do
-    action :delete
-    only_if { ::File.exists?("/etc/init/diamond.conf") }
+  if platform?('ubuntu')
+    service "diamond" do
+      provider Chef::Provider::Service::Upstart
+      action [:stop,:disable]
+    end
+    file "/etc/init/diamond.conf" do
+      action :delete
+      only_if { ::File.exists?("/etc/init/diamond.conf") }
+    end
   end
   runit_service "diamond" do
     run_template_name "diamond"
