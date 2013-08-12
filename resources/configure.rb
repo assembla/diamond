@@ -1,6 +1,7 @@
 actions :config
 
 attribute :cookbook, :kind_of => String, :default => "diamond"
+attribute :runit_cookbook, :kind_of => String, :default => "diamond"
 attribute :prefix, :kind_of => String, :default => "/opt/diamond"
 attribute :diamond_configuration_source, :kind_of => String, :default => "diamond.conf.erb"
 attribute :diamond_init_source, :kind_of => String, :default => "diamond.erb"

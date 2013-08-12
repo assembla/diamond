@@ -194,6 +194,12 @@ Attribute Parameters:
     <td>Configuration for the collectors allowing you to configure suffix, prefix, how to determine hostname and/or set the hostname manually</td>
     <td><tt><code>{ "hostname_method" => "fqdn_short", "hostname" => String.new, "path_prefix" => String.new, "path_suffix" => String.new, "interval" => 300 }</code></tt></td>
   </tr>
+  <tr>
+    <td>runit_cookbook</td>
+    <td>String</td>
+    <td>Name of the cookbook that holds the sv-diamond-run.erb template</td>
+    <td><tt><code>diamond</code></tt></td>
+  </tr>
 </table>
 
 `plugin.rb`
